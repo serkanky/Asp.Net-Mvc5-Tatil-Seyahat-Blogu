@@ -1,0 +1,33 @@
+﻿@model  List<TravelTrip.Models.Classes.Comment>
+
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Yorum Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Comment</th>
+        <th>Yorum Yapılan Blog</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@item.Comments</td>
+            <td>@item.Blogid</td>
+            <th><a href="/Admin/RemoveComment/@item.ID" class="btn btn-outline-danger">Sil</a></th>
+            <th><a href="/Admin/GetComment/@item.ID" class="btn btn-outline-primary">Güncelle</a></th>
+        </tr>
+    }
+
+</table>

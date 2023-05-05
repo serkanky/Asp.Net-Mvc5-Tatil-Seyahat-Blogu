@@ -1,0 +1,14 @@
+﻿@model TravelTrip.Models.Classes.Comment
+
+
+<div class="content-form">
+    <h3>Bir yorum ekle</h3>
+    
+    <form method="post">
+        <input type="text" placeholder="ID" name="Blogid" value="@ViewBag.values" required />
+        <input type="text" placeholder="Kullanıcı Adı" name="UserName" required />
+        <input type="text" placeholder="Email" name="Email" required />
+        <input type="text" placeholder="Yorum" name="Comments" required />
+        <input type="submit" value="Gönder" />
+    </form>
+</div>

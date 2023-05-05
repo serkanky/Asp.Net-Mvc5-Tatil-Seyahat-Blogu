@@ -1,0 +1,23 @@
+﻿@model TravelTrip.Models.Classes.About
+
+@{
+    ViewBag.Title = "GetAbout";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hakkımızda Güncelleme</h2>
+
+@using (@Html.BeginForm("UpdateAbout", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.ImageUrl)
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+
+    <button class="btn btn-outline-primary">Güncelle</button>
+}

@@ -1,0 +1,19 @@
+﻿@model TravelTrip.Models.Classes.About
+
+@{
+    ViewBag.Title = "InsertAbout";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hakkımızda Ekle</h2>
+
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ImageUrl)
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Yeni Hakkımızda Ekle</button>
+</form>

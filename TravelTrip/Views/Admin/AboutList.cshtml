@@ -1,0 +1,29 @@
+﻿@model List<TravelTrip.Models.Classes.About>
+
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hakkımızda Listesi </h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Fotoğraf</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.Description</td>
+            <th><a href="/Admin/RemoveAbout/@item.ID" class="btn btn-outline-danger">Sil</a></th>
+            <th><a href="/Admin/GetAbout/@item.ID" class="btn btn-outline-primary">Güncelle</a></th>
+        </tr>
+    }
+
+</table>

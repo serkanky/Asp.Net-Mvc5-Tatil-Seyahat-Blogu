@@ -1,0 +1,29 @@
+﻿@model TravelTrip.Models.Classes.Contact
+
+@{
+    ViewBag.Title = "GetContact";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>İletişim Güncelleme Sayfası</h2>
+<br />
+@using (@Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
+{
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.NameSurname)
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Subject)
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Message)
+    @Html.TextAreaFor(x => x.Message, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+}
